@@ -1,13 +1,901 @@
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Rampart+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+ol,
+ul {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+.logo {
+  width: 10%;
+}
+.logo img {
+  width: 100px;
+  height: 100px;
+}
+.div1 {
+  background-color: rgba(0, 0, 0, 0.06);
+  padding: 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 99999;
+}
+.nav ul {
+  display: flex;
+  justify-content: space-between;
+}
+.nav {
+  width: 50%;
+  margin-top: 40px;
+}
+.nav ul li .active {
+  color: aqua;
+  transition: all linear 0.3s;
+  -webkit-transition: all linear 0.3s;
+  -moz-transition: all linear 0.3s;
+  -ms-transition: all linear 0.3s;
+  -o-transition: all linear 0.3s;
+}
+.nav ul li a {
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+}
+.nav ul li a:hover {
+  color: aqua;
+}
+.search-box {
+  width: 20%;
+  padding: 10px;
+  height: 25px;
+  background-color: rgba(0, 0, 0, 0.225);
+  margin-top: 32px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.search-box {
+  display: flex;
+  cursor: pointer;
+}
+.search-box svg {
+  width: 5%;
+  color: #fff;
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+  margin-top: 6px;
+}
+.search-box p {
+  font-family: "Crimson Text", serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: aqua;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+.bg-img {
+  background-image: url(../src/images/p1.jpg);
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover;
+  position: relative;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.main-overlay {
+  display: flex;
+  justify-content: left;
+  align-items: center !important;
+  text-align: center;
+}
+.bg-icons {
+  z-index: 9999999;
+  justify-content: right;
+  width: 15%;
+}
+.bg-icons img {
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+  object-fit: cover;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+.bg-img::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.562);
+}
+.bg-content {
+  width: 75%;
+  padding-top: 180px;
+  padding-bottom: 100px;
+  z-index: 9999;
+  text-align: left;
+  margin-right: 380px;
+}
+.bg-content h1 {
+  font-family: "Rampart One", cursive;
+  font-size: 70px;
+  font-weight: 400;
+  color: #fff;
+  margin-top: 5px;
+}
+.bg-content h1 span {
+  width: 60%;
+}
+.bg-content span {
+  font-family: "Rampart One", cursive;
+  font-size: 70px;
+  font-weight: 400;
+  color: aqua;
+  margin-top: 5px;
+}
+.bg-content p {
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 24px;
+  padding-right: 240px;
+  padding-bottom: 30px;
+}
+.bg-content h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 400;
+  color: aqua;
+  line-height: 24px;
+  padding: 0 50px;
+}
+.flight-search button {
+  padding: 10px 25px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.flight-search button:first-child {
+  background-color: rgb(40, 161, 161);
+  margin-right: 15px;
+  color: #fff;
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all linear;
+  -webkit-transition: all linear;
+  -moz-transition: all linear;
+  -ms-transition: all linear;
+  -o-transition: all linear;
+}
+.flight-search button:first-child:hover {
+  background-color: #fff;
+  color: rgb(40, 161, 161);
+}
+.flight-search button:last-child {
+  background-color: rgba(7, 0, 0, 0);
+  margin-right: 15px;
+  color: rgb(40, 161, 161);
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 700;
+  outline: 1px solid rgb(40, 161, 161);
+  transition: all linear;
+  -webkit-transition: all linear;
+  -moz-transition: all linear;
+  -ms-transition: all linear;
+  -o-transition: all linear;
+}
+.flight-search button:last-child:hover {
+  background-color: #fff;
+  color: rgb(40, 161, 161);
+}
+.flight-last {
+  margin-top: 20px;
+  z-index: 99999;
+  position: absolute;
+  bottom: 0;
+  left: 16%;
+  width: 70%;
+}
+.about {
+  position: relative;
+}
+.about::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.81);
+  content: "";
+}
+.about img {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.about-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.about-left {
+  width: 300px;
+}
+.about-right {
+  display: flex;
+  justify-content: space-between;
+}
+.about-left {
+  position: relative;
+}
+.about-left-text {
+  background-color: #ffffffbf;
+  border-radius: 5px;
+  position: absolute;
+  top: 250px;
+  left: 60px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  padding: 10px 25px;
+}
+.about-left-text h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(0, 0, 0);
+  padding-bottom: 5px;
+}
+.about-left-text p {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.719);
+  padding-bottom: 5px;
+}
+.about-left-text span {
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.759);
+  padding-bottom: 5px;
+}
+.about-icon {
+  position: absolute;
+  bottom: -50px;
+  left: 230px;
+  cursor: pointer;
+}
+.about-icon2 {
+  position: absolute;
+  bottom: -50px;
+  right: 230px;
+  cursor: pointer;
+}
+.about-icon svg {
+  color: #fff;
+  margin: 0 auto !important;
+  width: 30px;
+  height: 30px;
+}
+.about-icon2 svg {
+  color: #fff;
+  margin: 0 auto !important;
+  width: 30px;
+  height: 30px;
+}
+.about-content {
+  width: 450px;
+}
+.about-content h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: aqua;
+  padding-bottom: 20px;
+}
+.about-content p {
+  font-family: "Crimson Text", serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+.about-content h5 {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+.about-content span {
+  font-family: "Crimson Text", serif;
+  font-size: 25px;
+  font-weight: 700;
+  color: aqua;
+}
+.flight-last {
+  display: flex;
+  justify-content: center;
+  justify-content: space-between;
+  padding-top: 30px;
+}
+.last-1 {
+  margin-top: 20px;
+}
+.last-3 {
+  margin-top: 20px;
+}
+.last-1 span {
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: aqua;
+}
+.last-2 img {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.last-3 span {
+  font-family: "Crimson Text", serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: aqua;
+}
+.about-left img {
+  width: 90%;
+  height: 350px;
+  border-bottom-left-radius: 80px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 80px;
+  border-top-left-radius: 0px;
+}
+
+.about-content {
+  text-align: left;
+}
+
+.about-btn button {
+  background-color: rgb(49, 172, 172);
+  color: #fff;
+  font-weight: 700;
+}
+.about-btn button:hover {
+  background-color: #fff !important;
+  color: rgb(35, 118, 118) !important;
+}
+
+.reserv-img {
+  position: relative;
+}
+.reserv-part {
+  position: relative;
+}
+.reserv-part video {
+  width: 100%;
+  height: 760px;
+  object-fit: cover;
+  overflow: hidden;
+  position: relative;
+}
+.reserv-part::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.501);
+}
+.reserv-main-content {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  z-index: 999999;
+  position: absolute;
+  top: 30%;
+  left: 10%;
+}
+.reservation {
+  z-index: 9999999;
+}
+.reserv-part2 h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 40px;
+  font-weight: 600;
+  color: rgb(56, 211, 195);
+  text-align: left;
+}
+.reserv-part2 p {
+  font-family: "Crimson Text", serif;
+  font-size: 25px;
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-align: left;
+  text-transform: capitalize;
+}
+.form {
+  margin-top: 60px;
+  background-color: #e9e4e4c6;
+  display: flex;
+  padding: 15px 204px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  margin-bottom: 50px;
+}
+.MuiPaper-root {
+  top: 550px !important;
+}
+
+.reserv-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 210px;
+}
+.reserv-text h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 35px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  text-transform: capitalize;
+}
+
+.form .svg svg {
+  margin-left: 150px;
+}
+.form .svg2 svg {
+  padding-right: 30px;
+}
+.form-btn {
+  margin-top: 5px;
+  margin-left: 20px;
+}
+.form-btn button {
+  padding: 12px 15px;
+  background-color: rgb(36, 154, 154);
+  color: #fff;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  outline: none;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+}
+.form-btn svg {
+  color: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+}
+.button-flight {
+  margin-right: 6px;
+}
+
+.item-main {
+  padding: 25px 100px;
+  background-color: rgba(232, 225, 225, 0.807);
+  margin: 0 auto;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.card-main h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 30px;
+  font-weight: 700;
+  color: rgb(255, 255, 255);
+  margin: 0 auto;
+  text-align: center;
+}
+.item-main button {
+  background-color: rgb(36, 154, 154) !important;
+  border: none !important;
+  outline: none !important;
+  color: #fff !important;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  cursor: pointer;
+}
+.each-items {
+  display: flex;
+  justify-content: center;
+  border-right: 1px solid #fff;
+}
+.each-items h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 0.666);
+  margin: 0 60px;
+}
+.card1 h2 {
+  font-family: "Crimson Text", serif;
+  font-size: 24px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  margin: 0 60px;
+  text-transform: capitalize;
+}
+.service-header img {
+  width: 100%;
+  height: 100vh;
+}
+.service-header {
+  position: relative;
+}
+.service-header::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background-color: rgba(0, 0, 0, 0.64);
+}
+.service-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+}
+.service-left h3 {
+  font-family: "Crimson Text", serif;
+  font-size: 35px;
+  font-weight: 600;
+  color: rgb(27, 219, 174);
+  text-transform: capitalize;
+}
+.service-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 80px;
+  left: -210px;
+  width: 1100px;
+  z-index: 999999;
+}
+.about-items {
+  width: 25%;
+}
+.about-main-2 {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  z-index: 999999;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  width: 800px;
+}
+.service-2 img {
+  width: 400px;
+  object-fit: cover;
+  overflow: hidden;
+  height: 450px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+.about-items h4 {
+  color: rgb(27, 219, 174);
+  font-family: "Crimson Text", serif;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: capitalize;
+  text-align: center;
+}
+.service-icon svg {
+  color: #fff;
+  width: 30px;
+  height: 30px;
+  margin: 0 50px !important;
+}
+.service-1 {
+  width: 300px;
+}
+.service-card {
+  padding: 40px 35px;
+  background: linear-gradient(
+    90deg,
+    rgba(110, 110, 195, 1) 0%,
+    rgba(50, 32, 142, 1) 0%,
+    rgba(111, 0, 69, 1) 85%
+  );
+  border-top-right-radius: 35px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 35px;
+  border-top-left-radius: 5px;
+}
+.service-card:first-child {
+  margin-bottom: 20px;
+}
+.service-card h4 {
+  color: rgb(27, 219, 174);
+  font-family: "Crimson Text", serif;
+  font-size: 25px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+}
+.service-icon {
+  margin: 0 50px !important;
+}
+.service-card p {
+  color: rgb(255, 255, 255);
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-align: center;
+}
+.contact-img img {
+  width: 100%;
+  height: 550px;
+}
+.contact {
+  position: relative;
+}
+.contact-img {
+  position: relative;
+}
+.contact-img::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 550px;
+  background-color: rgba(0, 0, 0, 0.782);
+  content: "";
+}
+.contact-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999999;
+  position: absolute;
+  top: 22%;
+  left: 16%;
+  content: "";
+  text-align: center;
+}
+.contact-items h3 {
+  font-family: "Crimson Text", serif;
+  font-size: 35px;
+  font-weight: 500;
+  text-transform: capitalize;
+  text-align: center;
+  color: rgb(27, 219, 174);
+  padding-bottom: 10px;
+}
+.contact-items p {
+  font-family: "Crimson Text", serif;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: rgb(255, 255, 255);
+}
+.contact-btn {
+  padding-top: 20px;
+}
+.contact-btn button {
+  padding: 15px 20px;
+  font-size: 20px;
+}
+
+.contact-btn button:first-child {
+  margin-right: 20px;
+}
+
+.logo-items img {
+  width: 150px;
+  height: 150px;
+  overflow: hidden;
+  object-fit: cover;
+}
+.contact-logo h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: rgb(19, 153, 139);
+  text-align: center;
+  padding-top: 30px;
+}
+.logo-1 {
+  display: flex;
+  justify-content: space-between;
+}
+.logo-items-2 img {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.contact-last img {
+  width: 100%;
+  height: 400px;
+}
+.contact-last {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 50px;
+}
+.last-1 h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: rgb(19, 153, 139);
+  text-align: left;
+}
+.last-2 h4 {
+  font-family: "Crimson Text", serif;
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: capitalize;
+  color: rgb(19, 153, 139);
+  text-align: left;
+}
+.last-1 p li a {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  color: rgba(0, 0, 0, 0.793);
+  text-align: left;
+}
+.last-1 p li {
+  list-style-type: none;
+  margin-bottom: 6px;
+}
+.last-2 input {
+  margin-top: 7px;
+  background-color: rgb(19, 153, 139);
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.last-2 input::placeholder {
+  color: #fff;
+}
+.last-2 p {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.738);
+  text-align: left;
+  margin-top: 8px;
+}
+.last-2 {
+  position: relative;
+}
+.last-2 svg {
+  fill: rgb(255, 255, 255);
+  width: 20px;
+  height: 20px;
+  padding: 9px;
+  background-color: rgb(19, 153, 139);
+  position: absolute;
+  top: 33px;
+  right: 79px;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.last-1-btn button {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: rgba(20, 199, 157, 0.679);
+  border: none;
+  color: aliceblue;
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+.last-1-btn button:first-child {
+  margin-right: 20px;
+}
+.last-3 {
+  margin-top: 40px;
+}
+.last-3 p {
+  font-family: "Crimson Text", serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.738);
+  text-align: center;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin: 0 auto !important;
+  border-top: 1px solid rgba(0, 0, 0, 0.512);
+  width: 100%;
 }
